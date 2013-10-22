@@ -1,0 +1,29 @@
+#package{
+    width: 95%;
+    margin: auto;
+}
+.modelsPackage{
+    text-align: left;
+}
+.modelsPackage li{
+    background: none repeat scroll 0 0 #000000;
+    display: inline-block;
+    height: 230px;
+    margin: 10px;
+    overflow: hidden;
+    text-align: center;
+    width: 170px;
+}
+.modelsPackage li img{
+    width: 100%;
+    height: auto;
+}
+#fullScreen{
+    border: 1px solid #000;
+    padding: 0 10px;
+    height: 20px;
+    line-height: 20px;
+    position: absolute;
+    right:20px;
+    top:50px;
+}

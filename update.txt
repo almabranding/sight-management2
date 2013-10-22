@@ -1,0 +1,22 @@
+ALTER TABLE `sightdb`.`users` ADD COLUMN `role` INT NULL DEFAULT '2'  AFTER `allowed_sex` ;
+ALTER TABLE `sightdb`.`users` CHANGE COLUMN `crypted_password` `password` VARCHAR(100) NULL DEFAULT NULL  ;
+CREATE TABLE `log` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) DEFAULT NULL,
+  `info` varchar(305) DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT
+
+ALTER TABLE `sightdb`.`models` ADD COLUMN `based_in` INT NULL DEFAULT 0  AFTER `featured` ;
+
+CREATE  TABLE `sightdb`.`based` (
+  `id` INT AUTO_INCREMENT ,
+  `base` VARCHAR(45) NULL ,
+  PRIMARY KEY (`id`) );
+INSERT INTO `sightdb`.`based` (`base`) VALUES ('None');
+INSERT INTO `sightdb`.`based` (`base`) VALUES ('Europe');
+INSERT INTO `sightdb`.`based` (`base`) VALUES ('EU');
+
+ALTER TABLE `sightdb`.`models` ADD COLUMN `content_ES` TEXT NULL  AFTER `based_in` , ADD COLUMN `content_EN` TEXT NULL  AFTER `content_ES` , ADD COLUMN `content_JP` TEXT NULL  AFTER `content_EN` , ADD COLUMN `content_CH` TEXT NULL  AFTER `content_JP` ;
+ALTER TABLE `sightdb`.`photos` ADD COLUMN `caption` VARCHAR(100) NULL  AFTER `photographer` ;
