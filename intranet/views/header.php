@@ -12,13 +12,11 @@
         <link rel="shortcut icon" href="<?php echo URL; ?>../favicon.png" Content-type="image/x-icon" />
         <link rel="stylesheet" href="<?php echo URL; ?>public/css/style.css" />
         <link rel="stylesheet" href="<?php echo URL; ?>public/css/zebra_form.css" />
-        <link rel="stylesheet" href="<?php echo URL; ?>public/css/jquery.Jcrop.custom.css" />
+        <link rel="stylesheet" href="<?php echo URL; ?>public/css/jquery.Jcrop.css" />
         <link rel="stylesheet" href="<?php echo URL; ?>public/css/HTML5Upload.css" />
-        <link rel="stylesheet" href="<?php echo URL; ?>public/css/file-upload.css" />
+<!--        <link rel="stylesheet" href="<?php //echo URL; ?>public/css/file-upload.css" />-->
         <!-- <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.17/themes/sunny/jquery-ui.css" />-->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-        <script src="<?php echo URL; ?>public/js/jquery.Jcrop.js"></script>
-
+       
     </head>
     <body>
         <?php Session::init(); ?>

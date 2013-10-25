@@ -17,6 +17,7 @@ class Packages extends Controller {
     }
     public function lista($pag=1,$order='updated_at DESC') 
     {
+        $this->view->js = array('packages/js/zebra_form.js','packages/js/custom.js');
         $this->model->pag=$pag;
         $this->view->searchModel=$this->model->searchForm();
         $this->view->list=$this->model->packageToTable($this->model->getPackagesList($pag,NUMPP,$order),$order);

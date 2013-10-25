@@ -59,14 +59,23 @@ class Models_Model extends Model {
 
 
         $form->add('label', 'label_height', 'height', 'Height');
-        $obj=$form->add('text', 'height_from', '', array('autocomplete' => 'off'));
-        $obj->set_attributes(array(
-                'style' => 'width:50px;float:left',
-            ));
-        $obj=$form->add('text', 'height_to', '', array('autocomplete' => 'off'));
- $obj->set_attributes(array(
-                'style' => 'width:50px;float:left',
-            ));
+        $obj = $form->add('text', 'height_from', '', array('autocomplete' => 'off','style' => 'width:50px;float:left'));
+        $obj = $form->add('text', 'height_to', '', array('autocomplete' => 'off','style' => 'width:50px;float:left'));
+        
+        $form->add('label', 'label_shoes', 'shoes', 'Shoes');
+        $obj = $form->add('text', 'shoes_from', '', array('autocomplete' => 'off','style' => 'width:50px;float:left'));
+        $obj = $form->add('text', 'shoes_to', '', array('autocomplete' => 'off','style' => 'width:50px;float:left'));
+
+        
+       $form->add('label', 'label_chest', 'chest', 'Chest');
+        $obj = $form->add('text', 'chest_from', '', array('autocomplete' => 'off','style' => 'width:50px;float:left'));
+        $obj = $form->add('text', 'chest_to', '', array('autocomplete' => 'off','style' => 'width:50px;float:left'));
+        
+        $form->add('label', 'label_waist', 'waist', 'Waist');
+        $obj = $form->add('text', 'waist_from', '', array('autocomplete' => 'off','style' => 'width:50px;float:left'));
+        $obj = $form->add('text', 'waist_to', '', array('autocomplete' => 'off','style' => 'width:50px;float:left'));
+        
+        
         $form->add('label', 'label_hairtype', 'hairtype', 'Hair type');
         $obj = $form->add('select', 'hairtype', '', array('autocomplete' => 'off'));
         foreach ($this->getAtributes('HairType') as $key => $value) {
@@ -298,6 +307,7 @@ class Models_Model extends Model {
     public function getComposite($id) {
         return $this->db->select('SELECT * FROM models_photos mp join photos p on (mp.photo_id=p.id) WHERE model_id=' . $id . ' AND composite_position!="" order by composite_position');
     }
+
 //    public function getNoComposite($id) {
 //        echo 'SELECT * FROM models_photos mp join photos p on (mp.photo_id=p.id) WHERE model_id=' . $id . ' AND NOT IN (SELECT * FROM models_photos mp join photos p on (mp.photo_id=p.id) WHERE model_id=' . $id . ' AND composite_position=!="" ) order by position';
 //        return $this->db->select('SELECT * FROM models_photos mp join photos p on (mp.photo_id=p.id) WHERE model_id=' . $id . ' AND composite_position=null order by position');
@@ -325,7 +335,10 @@ class Models_Model extends Model {
             $sql = substr($sql, 0, -3);
             $sql.=') AND ';
         }
-        $sql.=($_GET['height_from'] != '' && $_GET['height_to'] != '') ? ' m.height BETWEEN ' . $_GET['height_from'] . ' AND ' . $_GET['height_to'] . ' AND ': '';
+        $sql.=($_GET['height_from'] != '' && $_GET['height_to'] != '') ? ' m.height BETWEEN ' . $_GET['height_from'] . ' AND ' . $_GET['height_to'] . ' AND ' : '';
+        $sql.=($_GET['shoes_from'] != '' && $_GET['shoes_to'] != '') ? ' m.shoes BETWEEN ' . $_GET['shoes_from'] . ' AND ' . $_GET['shoes_to'] . ' AND ' : '';
+        $sql.=($_GET['chest_from'] != '' && $_GET['chest_to'] != '') ? ' m.bust BETWEEN ' . $_GET['chest_from'] . ' AND ' . $_GET['chest_to'] . ' AND ' : '';
+        $sql.=($_GET['waist_from'] != '' && $_GET['waist_to'] != '') ? ' m.waist BETWEEN ' . $_GET['waist_from'] . ' AND ' . $_GET['waist_to'] . ' AND ' : '';
         $sql.=($_GET['hairtype'] != '') ? ' hair_type_id=' . $_GET['hairtype'] . ' AND' : '';
         $sql.=($_GET['eyetype'] != '') ? ' eye_type_id=' . $_GET['eyetype'] . ' AND' : '';
         $sql.=($_GET['based_in'] != '') ? ' based_in=' . $_GET['based_in'] . ' AND' : '';
@@ -343,8 +356,7 @@ class Models_Model extends Model {
         $res2 = $this->db->select($sql2);
         if ($res1) {
             return $res1;
-        }
-        else
+        } else
             return $res2;
     }
 

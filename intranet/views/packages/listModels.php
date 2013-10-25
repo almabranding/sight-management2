@@ -11,16 +11,15 @@
     <?php
     $modelsPackage = array();
     foreach ($this->modelsPackage as $key => $value) {
-        $modelsPackage[] = (int) $value['id'];
+        $modelsPackage[] = $value['model_id'];
     }
     ?>
     <div>
-        <?php $this->searchModel->render('views/models/custom-template.php'); ?>
+        <? $this->searchModel->render('views/models/custom-template.php'); ?>
         <ul id="" class="ui-sortable sortable" rel="cosa">
-            <?php
+            <? 
             foreach ($this->models as $key => $value) {
-                Back::isImage($value['photo_id']);
-                $checked = (in_array($value['id'], $modelsPackage)) ? 'selectInPack' : '';
+                $checked = (in_array($value['model_id'], $modelsPackage)) ? 'selectInPack' : '';
                 ?>
                 <li id="foo_<?php echo $value['model_id']; ?>" class="ui-state-default modelList <?= $checked ?>" onclick="">
                     <input value="<?php echo $value['model_id']; ?>" name="check[]" class="checkFoto" type="checkbox">

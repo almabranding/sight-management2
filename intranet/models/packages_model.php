@@ -68,7 +68,7 @@ class Packages_Model extends Model {
 
         $form->add('hidden', '_add', 'project');
 
-        $form->add('label', 'label_name', 'name', 'Name');
+        $form->add('label', 'label_name', 'name', 'Package name');
         $form->add('text', 'name', $package['name'], array('autocomplete' => 'off', 'required' => array('error', 'Name is required!')));
 
 
@@ -391,7 +391,12 @@ class Packages_Model extends Model {
         }
         return false;
     }
-
+    public function png2jpg($originalFile, $outputFile, $quality = 100) {
+        $image = imagecreatefrompng($originalFile);
+        imagejpeg($image, $outputFile, $quality);
+        unlink($originalFile);
+        imagedestroy($image);
+    }
     public function delete($id) {
         $this->db->delete('packed_models', "`package_id` = {$id}");
         $this->db->delete('packages', "`id` = {$id}");
@@ -503,12 +508,13 @@ class Packages_Model extends Model {
         $dest = explode(",", $_POST['recipients']);
         foreach ($dest as $para) {
 
-            $sth = $this->db->select("SELECT * FROM contacts WHERE email = :email", array('email' => $para));
+            $sth = $this->db->select("SELECT * FROM contacts WHERE email = :email and user_id=:user_id", array('email' => $para,'user_id' => Session::get('userid')));
             if (!$sth) {
                 $data = array(
-                    'email' => $para,
-                    'created_at' => $this->getTimeSQL(),
-                    'updated_at' => $this->getTimeSQL(),
+                    'email'     => $para,
+                    'created_at'=> $this->getTimeSQL(),
+                    'updated_at'=> $this->getTimeSQL(),
+                    'user_id'   => Session::get('userid')
                 );
                 $this->db->insert('contacts', $data);
             }

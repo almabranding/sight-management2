@@ -259,7 +259,7 @@ form p{
     margin: 5px auto;
     padding: 0 5px;
     text-align: center;
-    width: 75px;
+    width: 80px;
     height: 21px;
 }
 header {
@@ -698,7 +698,7 @@ tableTitle li {
     background: #000;
     color:#fff;
 }
-.mainPic{
+.mainPic,.selectInPack{
     border: 3px solid #bdd5fe;
 }
 #arrowBack{

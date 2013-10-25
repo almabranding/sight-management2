@@ -1,25 +1,5 @@
 
-$(function() {
-   $('#sortable').sortable({
-        start: function(event, ui) {
-            $(ui.helper).addClass("sortable-drag-clone");
-        },
-        stop: function(event, ui) {
-            $(ui.helper).removeClass("sortable-drag-clone");
-        },
-        update: function(event, ui) {
-            updateListItem($(ui.item).attr('rel'), $(this).attr('rel'));
-        },
-        tolerance: "pointer",
-        connectWith: "#sortable",
-        placeholder: "sortable-draggable-placeholder",
-        forcePlaceholderSize: true,
-        appendTo: 'body',
-        helper: 'clone',
-        zIndex: 666
-    }).disableSelection();
-    //var sorted = $( "#sortable" ).sortable( "serialize", { key: "sort" } );    
-});
+
 function borrarPackList($packageid){
     if(confirm('¿Estas seguro?'))
             location.href = ROOT+'/packages/delete/'+$packageid;
@@ -34,7 +14,7 @@ function updateListItem(itemId, newStatus) {
     $('.addModels').on('click',function(){
          var $listaImages=$('.checkFoto:checked').serialize();
           var package=$('#packageId').val();
-          $.post(ROOT+'EN/packages/addToPackage/'+package,$listaImages).done(function(data) {alert('The model has been added to package');});
+          $.post(ROOT+'EN/packages/addToPackage/'+package,$listaImages).done(function(data) {$('.checkFoto:checked').parent().addClass('selectInPack');alert('The model has been added to package');});
     });
     $('#deleteModels').on('click',function(){
         var $lista=$('.checkFoto:checked').serialize();

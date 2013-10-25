@@ -6,10 +6,9 @@
     <div class="clr"></div>
 </div>
 <div id="sectionContent">
-    <?php $this->searchModel->render('views/models/custom-template.php'); ?>
+    <? $this->searchModel->render('views/models/custom-template.php'); ?>
     <ul id="" class="ui-sortable" rel="cosa">
-        <?php foreach ($this->models as $key => $value) {
-            Back::isImage($value['photo_id']); ?>
+        <? foreach ($this->models as $key => $value) {?>
             <li rel="<?php echo $value['model_id']; ?>" class="ui-state-default modelList" onclick="">
                 <a target="_blank" href="<?= WEB . 'ES/gallery/model/' . $value['model_id'] . '-' . $value['name']; ?>"><img caption="<?php echo $value['caption_' . LANG]; ?>" src="<?php echo URL . UPLOAD . 'models/' . Model::idToRute($value['photo_id']) . 'thumb_' . $value['file_file_name']; ?>"></a>
                 <p class="modelName"><?php echo $value['name']; ?></p> 

@@ -34,19 +34,5 @@
     </div>
 </div>
 <script>
-    $(function() {
-        $("#compositeBox, #draggable").sortable({
-            connectWith: ".compositeBox,.sortable",
-            update: function(event, ui) {
-                updateDragItem();
-            }
-        });
-        $("ul, li").disableSelection();
-    });
-    function updateDragItem() {
-        var a = $("#compositeBox li input").serialize();
-        var model_id = $("#model_id").val();
-        $.post(ROOT + 'models/compositeSort', a + '&action=updateOrder&model_id=' + model_id).done(function(data) {
-        });
-    }
+    
 </script>

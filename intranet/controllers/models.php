@@ -20,6 +20,7 @@ class Models extends Controller {
     }
     public function lista($pag=1) 
     {
+        $this->view->js = array('models/js/zebra_form.js','models/js/custom.js');
         $this->view->searchModel=$this->model->searchForm();
         $this->view->models=$this->model->getModels($pag,NUMPP);
         $this->view->pagination=$this->model->getPagination($pag,NUMPP,'models','models/lista');

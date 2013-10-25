@@ -22,6 +22,26 @@ window.onload = function() {
 
 
 };
+$(function() {
+   $('#sortable').sortable({
+        start: function(event, ui) {
+            $(ui.helper).addClass("sortable-drag-clone");
+        },
+        stop: function(event, ui) {
+            $(ui.helper).removeClass("sortable-drag-clone");
+        },
+        update: function(event, ui) {
+            updateListItem();
+        },
+        tolerance: "pointer",
+        connectWith: "#sortable",
+        placeholder: "sortable-draggable-placeholder",
+        forcePlaceholderSize: true,
+        appendTo: 'body',
+        helper: 'clone',
+        zIndex: 666
+    });
+});
 function showPop(id) {
     $('#white_full').css('display', 'block');
     $('#' + id).css('display', 'block');
@@ -38,3 +58,5 @@ $(document).ready(function() {
 
 
 });
+
+

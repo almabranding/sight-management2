@@ -4,6 +4,7 @@
     in reality you'd have this in an external stylesheet;
     i am using it like this for the sake of the example
 -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <style type="text/css">
     .Zebra_Form .optional { padding: 10px 50px; display: none }
 </style>
@@ -37,6 +38,36 @@
              </div>
              <div class="col" style="float:left">
             <?= $height_from.'<div style="float:left;line-height:27px;margin:0 10px;"> - </div> ' .$height_to?>
+             </div>
+            <div class="clr"></div>
+        </div>
+        
+        <div class="row">
+             <div class="col">
+            <?= $label_shoes ?>
+             </div>
+             <div class="col" style="float:left">
+            <?= $shoes_from.'<div style="float:left;line-height:27px;margin:0 10px;"> - </div> ' .$shoes_to?>
+             </div>
+            <div class="clr"></div>
+        </div>
+        
+        <div class="row">
+             <div class="col">
+            <?= $label_chest ?>
+             </div>
+             <div class="col" style="float:left">
+            <?= $chest_from.'<div style="float:left;line-height:27px;margin:0 10px;"> - </div> ' .$chest_to?>
+             </div>
+            <div class="clr"></div>
+        </div>
+        
+        <div class="row">
+             <div class="col">
+            <?= $label_waist ?>
+             </div>
+             <div class="col" style="float:left">
+            <?= $waist_from.'<div style="float:left;line-height:27px;margin:0 10px;"> - </div> ' .$waist_to?>
              </div>
             <div class="clr"></div>
         </div>
