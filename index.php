@@ -17,3 +17,4 @@ $bootstrap = new Bootstrap();
 //$bootstrap->setErrorFile();
 
 $bootstrap->init();
+//$bootstrap->end();

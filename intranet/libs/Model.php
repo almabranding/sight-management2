@@ -4,6 +4,9 @@ class Model {
         $this->db = new Database(DB_TYPE, DB_HOST, DB_NAME, DB_USER, DB_PASS);
         //$this->delTree(CACHE);
     }
+    function endConn() {
+        $this->db = null;
+    }
     function getMenu($id=null,$column=null){
         $column=($column==null)?'*':$column;
         if($id==null)return $this->db->select("SELECT * FROM menu WHERE parent=0");

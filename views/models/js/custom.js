@@ -1,4 +1,4 @@
-$(window).load(function() {
+$(function() {
     var masorny = document.querySelector('#masorny');
     var msnry = new Masonry(masorny, {
         // options

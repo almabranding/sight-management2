@@ -8,7 +8,9 @@ class Model {
         $this->db = new Database(DB_TYPE, DB_HOST, DB_NAME, DB_USER, DB_PASS);
         
     }
- 
+    function endConn() {
+        $this->db = null;
+    }
     function setLang($lang) {
         $this->lang = $lang;
     }

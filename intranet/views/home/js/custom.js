@@ -46,6 +46,6 @@ function updateListItem(itemId, newStatus) {
     });
     $('.modelList').on('click',function(){
         var $checkbox=$(this).children('.checkFoto');
-        $checkbox.attr('checked', !$checkbox.attr('checked'));
+        $checkbox.prop('checked', !$checkbox.prop('checked'));
     });
   });

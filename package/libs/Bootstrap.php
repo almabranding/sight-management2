@@ -234,6 +234,7 @@ class Bootstrap {
                 $this->_controller->index();
                 break;
         }
+        @$this->_controller->model->endConn();
     }
     
     /**

@@ -1,5 +1,4 @@
-
-<div id="" class="content homeContent">
+<div class="content homeContent">
 
     <ul class="rslides" id="slider1">
         <? foreach ($this->banner as $value) { ?>
@@ -60,7 +59,7 @@
         </ul>
 
         <h2><span class="inner"><?= $this->lang['latest_blog']; ?></span></h2>
-        <iframe id="frameBox" src="<? echo URL ?>latestPosts.php" frameborder="0" marginheight="0" marginwidth="0" style="width:100%; height: 280px; overflow:hidden;">Loading...</iframe>          
+        <iframe id="frameBox" src="latestPosts.php" frameborder="0" marginheight="0" marginwidth="0" style="width:100%; height: 280px; overflow:hidden;">Loading...</iframe>          
     </div>
     <div class="clr"></div>
 </div>

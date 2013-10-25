@@ -18,14 +18,6 @@ class Agencies_Model extends Model {
         $form->add('label', 'label_name', 'name', 'Name');
         $form->add('text', 'name', $contacts['name'], array('autocomplete' => 'off','required'  =>  array('error', 'Name is required!')));
        
-
-        $form->add('label', 'label_email', 'email', 'Mail');
-        $obj=$form->add('text', 'email', $contacts['email'], array('autocomplete' => 'off'));
-        $obj->set_rule(array(
-        'required'  =>  array('error', 'Email is required!'),
-        'email'     =>  array('error', 'Email address seems to be invalid!'),
-
-    ));
         $form->add('submit', '_btnsubmit', 'Submit');
         $form->validate();
         return $form;
@@ -36,20 +28,18 @@ class Agencies_Model extends Model {
     public function getAgenciesList($order='name') {
         return $this->db->select("SELECT * FROM mother_agencies ORDER by ".$order);  
     }
-    public function agenciesToTable($lista) {
+    public function agenciesToTable($lista,$order) {
+        $order=  explode(' ', $order);
+        $orden=(strtolower($order[1])=='desc')?' ASC':' DESC';
         $b['sort']=true;
         $b['title']=array(
            array(
                "title"  =>"Name",
-                "link"  => URL.LANG.'/contacts/lista/'.$this->pag.'/name',
-               "width"  =>"10%"
-           ),array(
-               "title"  =>"Email",
-                "link"  => URL.LANG.'/contacts/lista/'.$this->pag.'/email',
+                "link"  => URL.LANG.'/agencies/lista/'.$this->pag.'/name'.$orden,
                "width"  =>"10%"
            ),array(
                "title"  =>"Updated",
-                 "link"  => URL.LANG.'/contacts/lista/'.$this->pag.'/updated_at',
+                 "link"  => URL.LANG.'/agencies/lista/'.$this->pag.'/updated_at'.$orden,
                "width"  =>"20%"   
            ),array(
                "title"  =>"Options",
@@ -59,7 +49,6 @@ class Agencies_Model extends Model {
             $b['values'][]=   
             array(
                 "name"  =>$value['name'],
-                "email"  =>$value['email'],
                 "updated"  =>$this->getTimeStamp($value['updated_at']),
                 "Options"  =>'<a href="'.URL.LANG.'/agencies/editCreateAgency/'.$value['id'].'"><button title="Edit" type="button" class="edit"></button></a><button title="Delete" type="button" class="delete" onclick="borrarPackList(\''.$value['id'].'\');"></button>'
             );
@@ -69,7 +58,6 @@ class Agencies_Model extends Model {
     public function create() {
         $data = array(
             'name' => $_POST['name'],
-            'email' => $_POST['email'],
             'updated_at' => $this->getTimeSQL(),
             'created_at' => $this->getTimeSQL()
         );
@@ -79,7 +67,6 @@ class Agencies_Model extends Model {
     public function edit($id){
         $data = array(
             'name' => $_POST['name'],
-            'email' => $_POST['email'],
             'updated_at' => $this->getTimeSQL(),
         );
         $this->db->update('mother_agencies', $data, 

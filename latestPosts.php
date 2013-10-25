@@ -80,7 +80,8 @@ if (!is_null($elements)) {
                 min-height: 100%;
                 margin: 0 5px;
                 position: absolute;
-                width: 100%
+                width: 100%;
+                z-index: 10;
 
             }
             #sm_blog .desc {font-size:10px; color:#999;margin:0;height: 23px;}

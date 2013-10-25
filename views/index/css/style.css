@@ -1,7 +1,7 @@
+
 .rslides {
-    margin: 0 auto 40px;
-}
-.rslides {
+    max-height: 600px;
+     margin: 0 auto 40px;
     list-style: none outside none;
     margin: 0;
     overflow: hidden;
@@ -15,6 +15,9 @@
     float: left;
     height: auto;
     width: 100%;
+}
+#menu_separator{
+    display:none !important;
 }
 #top_content h2,#sidebar h2,#content h2 {
     border-bottom: 1px solid #CCCCCC;
@@ -94,9 +97,6 @@ ul.model-list.cover-list li, ul.cover-list.cover-list li {
     margin: auto;
     width: 100% !important;
 }
-body.two-col #header, body.two-col #footer, body.two-col #promo {
-    width: 100% !important;
-}
 
 @media only screen and (min-width: 1100px) {
 #menu a {
@@ -108,7 +108,7 @@ body.two-col #header, body.two-col #footer, body.two-col #promo {
 #promo {
     height: auto !important;
 }
-
+/*
 html, body {
     border: 0 none;
     font-family: inherit;
@@ -131,7 +131,7 @@ div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, pre, a, abbr, acronym, add
     margin: 0;
     padding: 0;
     vertical-align: baseline;
-}
+}*/
 blockquote, q {
     border: 0 none;
     font-family: inherit;
@@ -214,12 +214,12 @@ form.inline {
 form.inline p {
     margin-bottom: 0;
 }
-body {
+/*body {
     color: #333333;
     font-family: "Helvetica Neue",Arial,Helvetica,sans-serif;
     font-size: 87.5%;
     line-height: 1.5;
-}
+}*/
 body h1, body h2, body h3, body h4, body h5, body h6 {
     color: #222222;
     font-weight: normal;
@@ -490,12 +490,6 @@ form textarea {
     width: 390px;
 }
 
-body.two-col #header, body.two-col #footer, body.two-col #promo {
-    display: inline;
-    float: left;
-    margin-right: 12px;
-    width: 100%;
-}
 * html body.two-col #header, * html body.two-col #footer, * html body.two-col #promo {
     overflow-x: hidden;
 }

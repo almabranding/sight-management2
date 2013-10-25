@@ -1,7 +1,9 @@
 /*******************************
  *  STYLES FOR ZEBRA_FORM
  *******************************/
-
+.Zebra_Form div.error{
+    display: none !important;
+}
 .Zebra_Form,
 .Zebra_Form * {
     font-family: inherit;

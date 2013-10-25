@@ -42,6 +42,15 @@ class Bootstrap {
    
     }
     /**
+     * End the Bootstrap
+     * 
+     * @return boolean
+     */
+    public function end()
+    {
+        
+    }
+    /**
      * Check if the page is cached
      */
     public function loadCache()
@@ -224,6 +233,8 @@ class Bootstrap {
                 $this->_controller->index();
                 break;
         }
+        @$this->_controller->model->endConn();
+        
     }
     
     /**

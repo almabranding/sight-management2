@@ -18,14 +18,11 @@ switch($sumdomain){
         header('location: '.WEB.'gallery/model/'.$red[2]);
 }
 
-/*
-
 define('DB_TYPE', 'mysql');
 define('DB_HOST', 'localhost');
-define('DB_NAME', 'sight');
-define('DB_USER', 'root');
-define('DB_PASS', 'root');
-*/
+define('DB_NAME', 'sightdb');
+define('DB_USER', 'mysightma');
+define('DB_PASS', '4G91Fn8Y');
 
 // The sitewide hashkey, do not change this because its used for passwords!
 // This is for other hash keys... Not sure yet

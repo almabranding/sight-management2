@@ -27,7 +27,7 @@ function updateListItem(itemId, newStatus) {
       var $model_id=$('#model_id').val();
     $('.listImage').on('click',function(){
         var $checkbox=$(this).parent().children('.checkFoto');
-        $checkbox.attr('checked', !$checkbox.attr('checked'));
+        $checkbox.prop('checked', !$checkbox.prop('checked'));
     });
     $('.deleteSingle').on('click',function(){
         var $lista=$(this).parent().children('.checkFoto').val();
@@ -51,7 +51,7 @@ function updateListItem(itemId, newStatus) {
     });
     $('#allSelect').on('click',function(){
        var $checkbox=$('.checkFoto');
-       $checkbox.attr('checked', 'checked');
+       $checkbox.prop('checked', true);
     });
     $('#selectHeadsheet').on('click',function(){
         $('.checkFoto:checked').index();

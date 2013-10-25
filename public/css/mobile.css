@@ -111,9 +111,10 @@ nav[role="off-canvas"] ul > li:nth-child(5) {
         display: none;
     }
     #container {
-        margin: 2.5em .5em 0 .5em;
+       width: 95% !important;
+       margin: auto;
     }
-    #menu ul > li ul li{
+    #menu #menu_wrapper #menu_wrapper ul > li ul li{
         display: inline-block !important;
         float:left;
     }
@@ -121,7 +122,7 @@ nav[role="off-canvas"] ul > li:nth-child(5) {
         position: absolute;
         top: 3em;
         left: -28em;
-        width: 13em !important;
+        width: 13em !important; 
         opacity: 0;
     }
     nav[role="off-canvas"] ul > li {
@@ -182,10 +183,7 @@ nav[role="off-canvas"] ul > li:nth-child(5) {
         margin-right: -14.5em  !important;
     }
     #container {
-        float: left;
-        font: 1em 'Open Sans', sans-serif;
-        margin: .75em 0 0 0;
-        transition: margin .3s ease-in-out;
+        margin: auto;
     }
     #container > p {
         margin: .25em 0 .75em 0;
@@ -202,11 +200,12 @@ nav[role="off-canvas"] ul > li:nth-child(5) {
         vertical-align: middle;
     }
 
-    ul#latest-campaigns li {
-/*        min-width: 400px;*/
-        margin-left: 87px;
-        min-width: 251px;
+    ul#latest-campaigns li:first-child {
+        min-width: 400px;
     } 
+    ul#latest-campaigns li {
+    min-width: 200px;
+}
     ul#most-wanted li {
         min-width: 200px;
     }
@@ -224,7 +223,9 @@ nav[role="off-canvas"] ul > li:nth-child(5) {
         margin:auto !important;
     }
     .logoMobile{
-        display: inline-block !important;
+        position: relative !important;
+        margin: 0 auto;
+        display: block !important;
         text-align: center
     }
     #cover,#sm_blog{
@@ -382,6 +383,9 @@ nav[role="off-canvas"] ul > li:nth-child(5) {
     #videoLabel2{
         display: inline-block !important;
     }
+    #menu #menu_wrapper_wrapper{
+        display: relative;
+    }
 }
 
 /* Smartphones (portrait and landscape) ----------- */
@@ -407,16 +411,27 @@ nav[role="off-canvas"] ul > li:nth-child(5) {
 /* iPads (landscape) ----------- */
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
     /* Styles */
+    .capaVideo{
+         z-index: -1 !important;
+         width: 110%  !important;
+    }
+    #videoLabel{
+        display: none !important;
+    }
+    #videoLabel2{
+        display: inline-block !important;
+    }
 }
 
 /* iPads (portrait) ----------- */
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
     /* Styles */
-    #menu > ul > li > a{
+    #menu #menu_wrapper > ul > li > a{
         font-size: 10px !important;
     }
     .capaVideo{
-         z-index: -1 !important;
+        width: 120% !important;
+        z-index: -1 !important;
     }
     #videoLabel{
         display: none !important;

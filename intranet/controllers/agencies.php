@@ -14,11 +14,11 @@ class Agencies extends Controller {
         $this->view->modelsPackage=$this->model->modelsPackage($id);
         $this->view->render('agencies/view');  
     }
-    public function lista($pag=1,$order='name') 
+    public function lista($pag=1,$order='name ASC') 
     {
         $maxpp=35;
         $this->model->pag=$pag;
-        $this->view->list=$this->model->agenciesToTable($this->model->getAgenciesList($order));
+        $this->view->list=$this->model->agenciesToTable($this->model->getAgenciesList($order),$order);
         $this->view->render('agencies/list');  
     }
     public function editCreateAgency($id=null) 

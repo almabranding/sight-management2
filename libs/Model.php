@@ -5,6 +5,9 @@ class Model {
     function __construct() {
         $this->db = new Database(DB_TYPE, DB_HOST, DB_NAME, DB_USER, DB_PASS);
     }
+    function endConn() {
+        $this->db = null;
+    }
 
     function getPage($url) {
         $sth = $this->db->prepare("SELECT * FROM page WHERE url = :url");

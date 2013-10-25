@@ -2,7 +2,7 @@
     <a href="<?= URL ?>packages/view/<? echo $this->package; ?>"><div id="arrowBack">Back to package</div></a>
     <h1>Add model to package</h1>
     <div id="sectionNav">
-        <div id="addModels" class="btn blue">Add models</div>
+        <div class="addModels btn blue">Add models</div>
     </div>
     <div class="clr"></div>
 </div>
@@ -30,6 +30,9 @@
                 </li>
             <?php } ?>
         </ul>
+    </div>
+    <div id="sectionNav">
+        <div class="addModels btn blue">Add models</div>
     </div>
 </div>
 <? $this->getView('pagination'); ?>

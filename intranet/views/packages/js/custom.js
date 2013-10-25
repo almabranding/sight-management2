@@ -31,7 +31,7 @@ function updateListItem(itemId, newStatus) {
     $.post(ROOT+'packages/sort',sorted+'&action=updateOrder&id='+package).done(function(data) {});
   }
   $(document).ready(function() {
-    $('#addModels').on('click',function(){
+    $('.addModels').on('click',function(){
          var $listaImages=$('.checkFoto:checked').serialize();
           var package=$('#packageId').val();
           $.post(ROOT+'EN/packages/addToPackage/'+package,$listaImages).done(function(data) {alert('The model has been added to package');});
@@ -56,7 +56,7 @@ function updateListItem(itemId, newStatus) {
     });
     $('.modelList').on('click',function(){
         var $checkbox=$(this).children('.checkFoto');
-        $checkbox.attr('checked', !$checkbox.attr('checked'));
+        $checkbox.prop('checked', !$checkbox.prop('checked'));
     });
     $( "#contacts" ).change(function() {
         var coma="";

@@ -22,6 +22,7 @@
     <input type="checkbox" id="menuCheck">
 <label for="menuCheck" onclick></label>
             <nav id="menu" role="off-canvas">
+                <div id="menu_wrapper">
                 <ul>
                     <li class="first"><a href='/<?= LANG ?>/models/men' ><span><?= $this->lang['men'] ?></span></a></li>                                                                                                                                                                                                  
                     <li><a href='/<?= LANG ?>/models/women' ><span><?= $this->lang['women'] ?></span></a></li>               
@@ -41,6 +42,8 @@
                     <li><a href="http://blog.sight-management.com/" target="_blank"><span><?= $this->lang['blog'] ?></span></a></li>
                     <li class="last"><a href='/<?= LANG ?>/contact'><span><?= $this->lang['contact'] ?></span></a></li>      
                 </ul>
+                </div>
             </nav>
+<div id="menu_separator"></div>
 <div id="container" >
-    <a class="logoMobile logo" href="/<?= LANG ?>"></a>
+    <a class="" href="/<?= LANG ?>"><div class="logoMobile logo"></div></a>

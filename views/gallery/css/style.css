@@ -1,4 +1,7 @@
 /* Example wrapper */
+#container{
+    width: 100%;
+}
 .wrap {
 	position: relative;
 	margin: 3em 0;

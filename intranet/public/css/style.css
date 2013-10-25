@@ -21,10 +21,18 @@
     font-weight: bold;
     font-style: normal;
 }
-#wrapper,.wrapper {
-    position: relative;
-    width: 1200px;
+.wrapper {
     margin: 0 auto;
+    max-width: 1200px;
+    position: relative;
+    width: 100%;
+}
+#wrapper{
+    margin: 0 auto;
+    max-width: 1200px;
+    min-width: 1200px;
+    position: relative;
+    width: 100%;
 }
 #mainarea{
 }
@@ -35,6 +43,12 @@
 .sortable-drag-clone img{
    width: 100%;
    height: auto;
+    
+}
+html, body {
+    -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%
+}
+html{
     
 }
 body {
@@ -250,7 +264,7 @@ form p{
 }
 header {
     height:auto;
-    width:auto;
+    width:100%;
     font-family: HelveticaNeue;
 }
 .header_logo{
