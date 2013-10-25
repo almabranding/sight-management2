@@ -500,8 +500,8 @@ class Packages_Model extends Model {
         $headers .= "Reply-To: " . strip_tags($mailSight) . "\r\n";
         $headers .= "MIME-Version: 1.0\r\n";
         $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-        $headers .= "X-Mailer:PHP/".phpversion()."\n"; 
-        $headers .= "X-Mailer: Microsoft Office Outlook, Build 11.0.5510\r\n"; 
+        //$headers .= "X-Mailer:PHP/".phpversion()."\n"; 
+        //$headers .= "X-Mailer: Microsoft Office Outlook, Build 11.0.5510\r\n"; 
 
         if ($mensaje == '')
             $mensaje = 'This package was sent to you by ' . $user['firstname'] . ' ' . $user['lastname'];

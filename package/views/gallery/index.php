@@ -3,6 +3,7 @@
          <a href="/<?= LANG ?>/<?= PACKAGE ?>/<?= TYPEBOOKING ?>"><h1><?= $this->title ?></h1></a>
     </div>
 </div>
+<div id="menu_separator"></div>
 <div id="gallery_wrapper">
     <section id="modelGallery">
         <a href="/<?= LANG ?>/<?= PACKAGE ?>/<?= TYPEBOOKING ?>/all"><div id="arrowBack">Back to package</div></a>

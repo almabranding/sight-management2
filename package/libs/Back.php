@@ -7,7 +7,7 @@ class Back extends Model {
     }
 
     public function isImage($photo_id) {
-        $model = new Model();
+        /*$model = new Model();
         $images = $model->db->select("SELECT * FROM models_photos mp JOIN photos p ON(mp.photo_id=p.id) where p.id=" . $photo_id);
         foreach ($images as $value) {
             $rute = ROOT . '../uploads/models/';
@@ -33,7 +33,7 @@ class Back extends Model {
                 $thumb->destroy();
                 unset($thumb);
             }
-        }
+        }*/
     }
     public function getImageSize($photo_id,$file_file_name) {
         $rute = ROOT . '../uploads/models/'.Model::idToRute($photo_id);

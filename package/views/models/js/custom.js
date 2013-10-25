@@ -2,8 +2,9 @@ $(function() {
     var masorny = document.querySelector('#masorny');
     var msnry = new Masonry(masorny, {
         // options
-        columnWidth: 163,
+        columnWidth: 145,
         isFitWidth: true,
+        gutter: 12,
         itemSelector: '.item'
     });
 });

@@ -1,8 +1,9 @@
 <div id="header">
     <div id="header_wrapper">
-        <a href="/<?= LANG ?>/<?= PACKAGE ?>/<?= TYPEBOOKING ?>"><h1><?= $this->title ?></h1></a>
+         <a href="/<?= LANG ?>/<?= PACKAGE ?>/<?= TYPEBOOKING ?>"><h1><?= $this->title ?></h1></a>
     </div>
 </div>
+<div id="menu_separator"></div>
 <section id="modelsList" class="<?= $this->_sectionClass; ?>">
     <? if ($this->isFav) { ?>
         <div class="modelExtraInfo" style="margin:20px">
